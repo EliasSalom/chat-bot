@@ -124,14 +124,14 @@ body{
     font-size: 12px;
     text-transform: capitalize;
 }
-.msg-tex{
+.msg-text{
     width:100%;
     height:50px;
     display: flex;
     align-items: center;
 }
-.msg-tex input,
-.msg-tex button{
+.msg-text input,
+.msg-text button{
     flex:4;
     height:40px;
     outline: none;
@@ -139,7 +139,7 @@ body{
     padding:0 10px;
     border-radius: 3px;
 }
-.msg-tex button{
+.msg-text button{
     flex:1;
     max-width: 120px;
     cursor: pointer;
