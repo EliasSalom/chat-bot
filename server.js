@@ -3,10 +3,10 @@ const path = require('path');
 
 const PORT = process.env.PORT || 3000;
 
-const app = express();
- const http = require('http').createServer(app);
+const Server = express();
+ const http = require('http').createServer(Server);
 
-app.use(express.static(path.join(__dirname, 'public')));
+Server.use(express.static(path.join(__dirname, 'public')));
 
 const io = require('socket.io')(http)
 io.on('connection', socket =>{
@@ -17,7 +17,7 @@ io.on('connection', socket =>{
     })
 })
 
-app.listen(PORT, () => {
+Server.listen(PORT, () => {
     console.log("Server is listening on localhost::" + PORT);
 });
 
