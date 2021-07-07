@@ -6,7 +6,7 @@ const http = require('http').Server(app);
 
 
 
-app.use(express.static(path.join(__dirname, 'public')));
+Server.use(express.static(path.join(__dirname, 'public')));
 
 const io = require('socket.io')(http);
 io.on('connection', socket => {
