@@ -1,26 +1,60 @@
 const socket = io();
-const msgText = document.querySelector('#msg')
-const btnSend = document.querySelector('#btn-send')
-const chatBox = document.querySelector('.chat-content')
-const displayMsg = document.querySelector('.message')
+const msgText = document.querySelector('#msg');
+const btnSend = document.querySelector('#btn-send');
+const chatBox = document.querySelector('.chat-content');
+const displayMsg = document.querySelector('.message');
 
-let name;
+let username;
+
 do {
-    name = prompt('what is your name?')
-}while(!name);
-
-document.querySelector('#your-name').textContent = name;
+    username = prompt('what is your name?');
+} while (!username)
+document.querySelector('#your_name').textContent = username;
 msgText.focus();
 
-btnSend.addEventListener('click',()=>{
-    sendMsg(msgText.value)
-})
 
-const sendMsg =message => {
-    let msg ={
-        user:name,
-        message:message.trim()
+btnSend.addEventListener('click', (event) => {
+    event.preventDefault();
+    sendMsg(msgText.value);
+    msgText.value = '';
+    msgText.focus();
+    chatBox.scrollTop = chatBox.scrollHeight;
+});
+
+const sendMsg = message => {
+    let msg = {
+        user: username,
+        message: message.trim()
     }
 
-    socket.emit('sendMessage',msg)
+    display(msg, 'you-message');
+
+    socket.emit('sendMessage', msg);
+}
+
+socket.on('sendToAll', msg => {
+    display(msg, 'other-message');
+    chatBox.scrollTop = chatBox.scrollHeight;
+});
+
+const display = (msg, type) => {
+    const msgDiv = document.createElement('div');
+    let className = type;
+    msgDiv.classList.add(className, 'message-row');
+    let time = new Date().toLocaleTimeString();
+
+    let innerText = `
+    <div class="message-title">
+    〽️<span>${msg.user}</span>
+    </div>
+    <div class="message-text">
+        ${msg.message}
+    </div>
+    <div class="message-time">
+        ${time}
+    </div>
+    `;
+
+    msgDiv.innerHTML = innerText;
+    displayMsg.appendChild(msgDiv);
 }

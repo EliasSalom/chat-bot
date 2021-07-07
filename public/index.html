@@ -17,7 +17,7 @@
                 <i class="fab fa-facebook-messenger"></i>
                 <h3>Messenger</h3>
             </div>
-            <p id="yor_name"> Your Name </p>
+            <p id="your_name"> Your Name </p>
         </div>
         <!------------------------------------------->
         <div class="chat-section">
@@ -25,26 +25,26 @@
                 <div class="chat-content">
                     <div class="message">
                         <div class="message-row other-message">
-                            <div class="message-title">
-                                〽️<span>Dev AT</span>
+                            <!-- <div class="message-title">
+                                〽️<span>User 1</span>
                             </div>
                             <div class="message-text">
-                               hello
+                                hello
                             </div>
                             <div class="message-time">
                                 July 8
-                            </div>
+                            </div> -->
                         </div>
                         <div class="message-row you-message">
-                            <div class="message-title">
-                                〽️<span>User 01</span>
+                            <!-- <div class="message-title">
+                                〽️<span>User 2</span>
                             </div>
                             <div class="message-text">
                                 ok
                             </div>
                             <div class="message-time">
                                 July 8
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -53,7 +53,7 @@
 
                     <input type="text" name="msg" id="msg" placeholder="Type message here ... " autocomplete="off">
 
-                    <button>
+                    <button id="btn-send">
                         <i class="fas fa-paper-plane">Send</i>
                     </button>
                 </form>
@@ -61,7 +61,7 @@
         </div>
     </div>
     <script src="/socket.io/socket.io.js"></script>
-    <script src="app.js"></script>
+    <script defer src="app.js"></script>
 </body>
 
 </html>
