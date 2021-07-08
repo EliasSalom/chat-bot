@@ -2,7 +2,9 @@
 privet chat system to help users to communication 
 
 # System
-the system was been developed by our team noon, elias and abed,
+- Import the project
+- Write your name and start to talk with other person
+- the chat is privet and no one know the other person on the other side
 
 # Demo System
 please visit our website: https://privet-chat.herokuapp.com/
@@ -14,3 +16,10 @@ to use this program please do this steps,
     npm install
 
 ## and run the server 
+
+## Programmers :
+1. [Elias](https://github.com/EliasSalom)
+2. [Noor](https://github.com/noor-sawaed)
+3. [Abed](https://github.com/abedwatted)
+
+
