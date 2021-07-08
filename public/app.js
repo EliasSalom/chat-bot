@@ -15,10 +15,12 @@ msgText.focus();
 
 btnSend.addEventListener('click', (event) => {
     event.preventDefault();
+    if(msgText.value !== ""){
     sendMsg(msgText.value);
     msgText.value = '';
     msgText.focus();
     chatBox.scrollTop = chatBox.scrollHeight;
+    }
 });
 
 const sendMsg = message => {
